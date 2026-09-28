@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Proposal - Make Ways Pvt Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                        },
+                        nabil: {
+                            main: '#0066cc', // Approximated Nabil Blue
+                            dark: '#004c99'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom animations and base styles */
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        
+        .fade-in { animation: fadeIn 0.5s ease-in-out forwards; }
+        .slide-up { animation: slideUp 0.6s ease-out forwards; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Glassmorphism effects */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Access Screen -->
+    <div id="access-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900 bg-opacity-95 fade-in">
+        <div class="glass-panel p-8 md:p-12 rounded-2xl max-w-md w-full mx-4 text-center slide-up">
+            <div class="mb-6 flex justify-center space-x-4 items-center">
+                <!-- Mock Logos -->
+                <div class="text-brand-600 font-bold text-2xl tracking-tighter">MAKE<span class="text-slate-800">WAYS</span></div>
+                <div class="h-8 w-px bg-slate-300"></div>
+                <div class="text-nabil-main font-bold text-xl italic">NABIL BANK</div>
+            </div>
+            
+            <h2 class="text-2xl font-bold mb-2 text-slate-800">Secure Proposal Access</h2>
+            <p class="text-slate-500 mb-8 text-sm">Please enter the access code provided to view the Digital Marketing Proposal.</p>
+            
+            <div class="relative mb-6">
+                <input type="password" id="access-code-input" 
+                       class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all text-center text-lg tracking-widest placeholder:tracking-normal"
+                       placeholder="Enter Access Code">
+                <p id="error-message" class="text-red-500 text-sm mt-2 hidden absolute w-full text-center">Incorrect code. Please try again.</p>
+            </div>
+            
+            <button id="unlock-btn" onclick="checkAccess()" 
+                    class="w-full bg-brand-600 hover:bg-brand-500 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg flex justify-center items-center gap-2">
+                <i class="fas fa-lock-open text-sm"></i> View Proposal
+            </button>
+            <p class="text-xs text-slate-400 mt-6">Confidential Document prepared for Nabil Bank Management.</p>
+            <p class="text-xs text-slate-400 mt-1">Hint: Try 'NABIL2026'</p>
+        </div>
+    </div>
+
+    <!-- Main Proposal Content (Hidden by default) -->
+    <div id="proposal-content" class="hidden flex-grow flex flex-col relative w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 opacity-0 transition-opacity duration-700">
+        
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 pb-6 border-b border-slate-200">
+            <div>
+                <div class="text-brand-600 font-extrabold text-3xl tracking-tighter mb-1">MAKE<span class="text-slate-800">WAYS</span></div>
+                <p class="text-sm text-slate-500">Comprehensive Digital Growth Strategies</p>
+            </div>
+            <div class="mt-4 md:mt-0 text-left md:text-right">
+                <p class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Prepared For</p>
+                <div class="text-nabil-main font-bold text-2xl italic">NABIL BANK</div>
+                <p class="text-sm text-slate-500 mt-1">Date: September 28, 2026</p>
+            </div>
+        </header>
+
+        <!-- Hero / Executive Summary -->
+        <section class="mb-20 slide-up" style="animation-delay: 0.1s;">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-50 rounded-full blur-3xl -mr-20 -mt-20 opacity-60"></div>
+                <div class="relative z-10">
+                    <span class="bg-brand-100 text-brand-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4 inline-block">Executive Summary</span>
+                    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">Elevating Nabil Bank's Digital Presence & Customer Acquisition.</h1>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-8 max-w-3xl">
+                        Make Ways Pvt Ltd proposes a comprehensive, data-driven digital marketing strategy tailored specifically for Nabil Bank. Our objective is to solidify Nabil Bank's position as Nepal's most innovative and customer-centric bank by enhancing online visibility, driving targeted customer acquisition, and fostering deep digital engagement across all demographics.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Objectives -->
+        <section class="mb-20 slide-up" style="animation-delay: 0.2s;">
+            <h2 class="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
+                <i class="fas fa-bullseye text-brand-500"></i> Strategic Objectives
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-500 text-xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Increase Account Opening</h3>
+                    <p class="text-slate-600 text-sm">Drive a 35% increase in online account openings through targeted performance marketing campaigns.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center text-purple-500 text-xl mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">App Adoption</h3>
+                    <p class="text-slate-600 text-sm">Boost Nabil SmartBank app downloads and active usage by leveraging influencer partnerships and app store optimization.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center text-amber-500 text-xl mb-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Brand Trust & Authority</h3>
+                    <p class="text-slate-600 text-sm">Reinforce market leadership through thought leadership content, CSR visibility, and robust community management.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proposed Services List -->
+        <section class="mb-20 slide-up" style="animation-delay: 0.3s;">
+            <h2 class="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
+                <i class="fas fa-layer-group text-brand-500"></i> Comprehensive Service Scope
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- Service 1 -->
+                <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="md:w-1/4 flex flex-col items-center justify-center bg-slate-50 rounded-xl p-4 text-center">
+                        <i class="fas fa-search-dollar text-4xl text-nabil-main mb-3"></i>
+                        <h4 class="font-bold text-slate-800">Performance Marketing</h4>
+                    </div>
+                    <div class="md:w-3/4">
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1 text-sm"></i> <span><strong>Search Engine Marketing (SEM):</strong> Highly targeted Google Ads campaigns capturing intent for loans, fixed deposits, and credit cards.</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1 text-sm"></i> <span><strong>Social Media Ads:</strong> Conversion-optimized campaigns on Meta (Facebook/Instagram), LinkedIn, and TikTok.</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1 text-sm"></i> <span><strong>Programmatic Display:</strong> Retargeting website visitors and reaching potential customers across premium local and international publisher networks.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="md:w-1/4 flex flex-col items-center justify-center bg-slate-50 rounded-xl p-4 text-center">
+                        <i class="fas fa-hashtag text-4xl text-nabil-main mb-3"></i>
+                        <h4 class="font-bold text-slate-800">Social Media & Content</h4>
+                    </div>
+                    <div class="md:w-3/4">
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1 text-sm"></i> <span><strong>Always-On Content Strategy:</strong> Producing engaging videos, infographics, and interactive posts tailored to different customer segments.</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1 text-sm"></i> <span><strong>Community Management:</strong> Proactive reputation management, rapid query resolution, and fostering positive sentiment across platforms.</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1 text-sm"></i> <span><strong>Influencer & KOL Partnerships:</strong> Collaborating with trusted local voices for financial literacy campaigns and product launches.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="md:w-1/4 flex flex-col items-center justify-center bg-slate-50 rounded-xl p-4 text-center">
+                        <i class="fas fa-chart-pie text-4xl text-nabil-main mb-3"></i>
+                        <h4 class="font-bold text-slate-800">SEO & Analytics</h4>
+                    </div>
+                    <div class="md:w-3/4">
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1 text-sm"></i> <span><strong>Technical & On-Page SEO:</strong> Optimizing the Nabil Bank website to dominate organic search results for banking queries in Nepal.</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1 text-sm"></i> <span><strong>Data & Dashboarding:</strong> Implementation of advanced tracking (GA4, Meta Pixel) and providing real-time Looker Studio dashboards for full transparency.</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1 text-sm"></i> <span><strong>Conversion Rate Optimization (CRO):</strong> Continuous A/B testing of landing pages to maximize ROI.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment and Timeline -->
+        <section class="mb-20 grid grid-cols-1 md:grid-cols-2 gap-10 slide-up" style="animation-delay: 0.4s;">
+            <!-- Investment -->
+            <div class="bg-slate-900 rounded-3xl p-8 text-white relative overflow-hidden shadow-lg">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500 rounded-full blur-3xl -mr-10 -mt-10 opacity-50"></div>
+                <h3 class="text-xl font-bold mb-6 text-slate-100 flex items-center gap-2">
+                    <i class="fas fa-wallet text-brand-400"></i> Proposed Investment
+                </h3>
+                <p class="text-slate-300 text-sm mb-6">A customized monthly retainer covering all strategy, execution, creative production, and reporting.</p>
+                
+                <div class="bg-slate-800/50 rounded-xl p-5 border border-slate-700 mb-6">
+                    <div class="text-sm text-slate-400 uppercase tracking-wider mb-1">Monthly Retainer</div>
+                    <div class="text-3xl font-bold text-white">NPR 3,50,000<span class="text-lg text-slate-400 font-normal"> /mo</span></div>
+                    <div class="text-xs text-slate-400 mt-2">*Exclusive of actual media spend (Ad budget). Applicable taxes extra.</div>
+                </div>
+                
+                <ul class="space-y-2 text-sm text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fas fa-circle text-[8px] text-brand-400"></i> Minimum 6-month contract recommended</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-circle text-[8px] text-brand-400"></i> Dedicated Account Manager included</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-circle text-[8px] text-brand-400"></i> Bi-weekly strategy meetings</li>
+                </ul>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+                <h3 class="text-xl font-bold mb-6 text-slate-800 flex items-center gap-2">
+                    <i class="fas fa-route text-brand-500"></i> Proposed Timeline
+                </h3>
+                
+                <div class="relative border-l-2 border-slate-200 ml-3 space-y-6 pb-4">
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1 h-4 w-4 rounded-full bg-brand-500 border-4 border-white shadow"></div>
+                        <div class="pl-6">
+                            <h4 class="font-bold text-slate-800 text-sm">Week 1: Discovery & Audit</h4>
+                            <p class="text-xs text-slate-500 mt-1">Deep dive into current assets, audience research, and KPI alignment.</p>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1 h-4 w-4 rounded-full bg-slate-300 border-4 border-white shadow"></div>
+                        <div class="pl-6">
+                            <h4 class="font-bold text-slate-800 text-sm">Week 2-3: Strategy & Asset Creation</h4>
+                            <p class="text-xs text-slate-500 mt-1">Campaign architecture, creative design, and tracking setup.</p>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1 h-4 w-4 rounded-full bg-slate-300 border-4 border-white shadow"></div>
+                        <div class="pl-6">
+                            <h4 class="font-bold text-slate-800 text-sm">Week 4: Launch & Optimization</h4>
+                            <p class="text-xs text-slate-500 mt-1">Go-live for initial campaigns and daily performance monitoring.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-100">
+                    <p class="text-sm text-slate-600 mb-4">Ready to transform Nabil Bank's digital trajectory?</p>
+                    <button onclick="contactUs()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+                        Approve Proposal
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-auto py-8 border-t border-slate-200 text-center text-sm text-slate-500">
+            <p class="font-semibold text-slate-700 mb-2">Make Ways Pvt Ltd.</p>
+            <p>Kathmandu, Bagmati Province, Nepal</p>
+            <p class="mt-4 text-xs opacity-75">CONFIDENTIAL - Do not distribute without permission.</p>
+        </footer>
+    </div>
+
+    <!-- Message Modal for Actions -->
+    <div id="message-modal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-slate-900 bg-opacity-50 fade-in">
+        <div class="bg-white p-6 rounded-xl shadow-xl max-w-sm w-full mx-4 text-center">
+            <div class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-4 text-xl">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3 class="font-bold text-lg text-slate-800 mb-2" id="modal-title">Action Received</h3>
+            <p class="text-slate-600 text-sm mb-6" id="modal-desc">Thank you. The Make Ways team has been notified.</p>
+            <button onclick="closeModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 py-2 rounded-lg font-medium transition-colors">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Set the valid access code
+        const VALID_CODE = 'NABIL2026';
+
+        // Add event listener for Enter key on input
+        document.getElementById('access-code-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkAccess();
+            }
+        });
+
+        function checkAccess() {
+            const inputElement = document.getElementById('access-code-input');
+            const errorElement = document.getElementById('error-message');
+            const btnElement = document.getElementById('unlock-btn');
+            const enteredCode = inputElement.value.trim().toUpperCase();
+
+            // Provide visual feedback during check
+            btnElement.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...';
+            btnElement.disabled = true;
+
+            setTimeout(() => {
+                if (enteredCode === VALID_CODE) {
+                    // Success
+                    errorElement.classList.add('hidden');
+                    inputElement.classList.remove('border-red-500', 'ring-red-500');
+                    
+                    // Transition to proposal
+                    const accessScreen = document.getElementById('access-screen');
+                    const proposalContent = document.getElementById('proposal-content');
+                    
+                    accessScreen.style.opacity = '0';
+                    accessScreen.style.transition = 'opacity 0.5s ease';
+                    
+                    setTimeout(() => {
+                        accessScreen.classList.add('hidden');
+                        proposalContent.classList.remove('hidden');
+                        // Small delay to ensure display:flex is applied before opacity transition starts
+                        setTimeout(() => {
+                            proposalContent.style.opacity = '1';
+                        }, 50);
+                    }, 500);
+
+                } else {
+                    // Failure
+                    errorElement.classList.remove('hidden');
+                    inputElement.classList.add('border-red-500', 'ring-red-200');
+                    inputElement.value = '';
+                    
+                    // Reset button
+                    btnElement.innerHTML = '<i class="fas fa-lock-open text-sm"></i> View Proposal';
+                    btnElement.disabled = false;
+                    inputElement.focus();
+                }
+            }, 600); // Simulate network/checking delay
+        }
+
+        // Functions for interaction within the proposal
+        function contactUs() {
+            const modal = document.getElementById('message-modal');
+            document.getElementById('modal-title').innerText = "Proposal Approved";
+            document.getElementById('modal-desc').innerText = "Thank you! An automated email has been sent to the Make Ways account team to initiate the onboarding process.";
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('message-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
